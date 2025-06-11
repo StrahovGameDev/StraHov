@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv6pedn8ngjc1"]
+[gd_scene load_steps=3 format=3 uid="uid://bv6pedn8ngjc1"]
+
+[ext_resource type="PackedScene" uid="uid://dolynv3sxhouy" path="res://block_2_manager.tscn" id="1_8r6n6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3gtdk"]
 size = Vector3(68, 20, 17)
@@ -14,3 +16,6 @@ size = Vector3(68, 20, 17)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 shape = SubResource("BoxShape3D_3gtdk")
+
+[node name="Block2Manager" parent="." instance=ExtResource("1_8r6n6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.7079, 0.560019, 12.6235)
