@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://limqqekoiruf"]
+
+[ext_resource type="PackedScene" uid="uid://dh681jq7gntr8" path="res://scenes/terrain.tscn" id="1_paxxb"]
+[ext_resource type="PackedScene" uid="uid://bv6pedn8ngjc1" path="res://scenes/block.tscn" id="2_gldc4"]
+
+[node name="Map" type="Node3D"]
+
+[node name="Terrain" parent="." instance=ExtResource("1_paxxb")]
+
+[node name="Blocks" type="Node3D" parent="."]
+
+[node name="Block" parent="Blocks" instance=ExtResource("2_gldc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.391, 0, 57.7224)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("2_gldc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.391, 0, 114.501)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("2_gldc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.493, 0, 166.069)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("2_gldc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.206, 0, -8.51006)
+
+[node name="Block5" parent="Blocks" instance=ExtResource("2_gldc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.2744, 0, 149.755)
+
+[node name="Block6" parent="Blocks" instance=ExtResource("2_gldc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.2744, 0, 86.729)
+
+[node name="Block7" parent="Blocks" instance=ExtResource("2_gldc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.2744, 0, 17.2393)
+
+[node name="Block8" parent="Blocks" instance=ExtResource("2_gldc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.76, 0, -121.925)
+
+[node name="Block9" parent="Blocks" instance=ExtResource("2_gldc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.76, 0, -205.467)
+
+[node name="Block10" parent="Blocks" instance=ExtResource("2_gldc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.76, 0, -289.452)
+
+[node name="Block11" parent="Blocks" instance=ExtResource("2_gldc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.236, 0, -308.031)
+
+[node name="Block12" parent="Blocks" instance=ExtResource("2_gldc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7125, 0, -352.249)

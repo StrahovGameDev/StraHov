@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh681jq7gntr8"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_unmtw"]
+size = Vector2(1000, 1000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_unmtw"]
+size = Vector3(1000, 0, 1000)
+
+[node name="Terrain" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_unmtw")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_unmtw")
