@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdcmbkjq868ru"]
+[gd_scene load_steps=6 format=3 uid="uid://djesgf26jvqba"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_l7a3g"]
-[ext_resource type="Script" path="res://cross_hair.gd" id="2_ujf4b"]
+[ext_resource type="Script" uid="uid://bdbrbuktuwnt8" path="res://player.gd" id="1_l7a3g"]
+[ext_resource type="Script" uid="uid://cjkdvcailusal" path="res://cross_hair.gd" id="2_ujf4b"]
 [ext_resource type="PackedScene" uid="uid://blnv74irts5gj" path="res://console.tscn" id="2_whsb8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1tgjw"]
