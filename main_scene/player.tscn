@@ -8,7 +8,8 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dhtji"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+collision_layer = 3
 script = ExtResource("1_l7a3g")
 
 [node name="FPS" type="Label" parent="."]
@@ -37,3 +38,19 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_ujf4b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="EnterDialog" type="Label" parent="CanvasLayer"]
+offset_left = 539.0
+offset_top = 293.0
+offset_right = 649.0
+offset_bottom = 383.0
+theme_override_font_sizes/font_size = 50
+text = "E"
+
+[node name="Dialog" type="Label" parent="CanvasLayer"]
+offset_left = 157.0
+offset_top = 279.0
+offset_right = 964.0
+offset_bottom = 375.0

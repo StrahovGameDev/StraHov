@@ -1,11 +1,15 @@
 extends CharacterBody3D
 
 @onready var head = $Head
+@onready var dialog_label = $CanvasLayer/EnterDialog
+@onready var dialog = $CanvasLayer/Dialog
 
 @export var speed = 5.0
 const JUMP_VELOCITY = 4.5
 
 var mouse_sens = 0.5
+
+var current_dialog = ""
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -24,6 +28,8 @@ var god_mode_acquired: bool = false
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$Console.set_player_variables.connect(_on_set_player_variables)
+	dialog_label.visible = false
+	dialog.visible = false
 
 
 func _input(event: InputEvent) -> void:
@@ -51,6 +57,14 @@ func _input(event: InputEvent) -> void:
 			flying_toggle()
 		last_space_pressed_time = current_time
 	#endregion
+	
+	if event.is_action_pressed("accept") and !dialog.visible:
+		dialog.text = current_dialog
+		dialog_label.visible = false
+		dialog.visible = true
+	elif event.is_action_pressed("accept") and dialog.visible:
+		dialog.visible = false
+		dialog_label.visible = true
 
 func flying_toggle():
 	flying = !flying
