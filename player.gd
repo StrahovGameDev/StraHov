@@ -26,7 +26,6 @@ var god_mode_acquired: bool = false
 #endregion
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$Console.set_player_variables.connect(_on_set_player_variables)
 	dialog_label.visible = false
 	dialog.visible = false
