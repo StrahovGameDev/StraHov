@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://blnv74irts5gj"]
+
+[ext_resource type="Script" uid="uid://cyhy4yyc0pycn" path="res://console.gd" id="1_lu137"]
+
+[node name="Console" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 6.0
+offset_top = 443.0
+offset_right = 46.0
+offset_bottom = 483.0
+script = ExtResource("1_lu137")
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Caret" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -9.0
+offset_right = 46.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 36
+text = ">"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_right = 701.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 20
+
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
