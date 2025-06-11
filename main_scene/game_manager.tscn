@@ -2,11 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bbookv36piwvg" path="res://main_scene/game_manager.gd" id="1_ctrpd"]
 [ext_resource type="PackedScene" uid="uid://bdcmbkjq868ru" path="res://main_scene/player.tscn" id="2_twbfk"]
+[ext_resource type="PackedScene" uid="uid://limqqekoiruf" path="res://scenes/map.tscn" id="3_ddapi"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ddapi"]
-size = Vector3(20, 1, 20)
-
-[sub_resource type="BoxMesh" id="BoxMesh_1lmva"]
+[sub_resource type="Environment" id="Environment_ddapi"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_ctrpd")
@@ -14,12 +12,10 @@ script = ExtResource("1_ctrpd")
 [node name="Player" parent="." instance=ExtResource("2_twbfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42252, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+[node name="Map" parent="." instance=ExtResource("3_ddapi")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_ddapi")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ddapi")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
-mesh = SubResource("BoxMesh_1lmva")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.799737, -0.46758, 0.376549, 0, 0.627216, 0.778846, -0.60035, -0.622872, 0.501608, 0, 0, 0)
