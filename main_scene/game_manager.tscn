@@ -1,18 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bh1bx58xo7kmm"]
+[gd_scene load_steps=2 format=3 uid="uid://bh1bx58xo7kmm"]
 
 [ext_resource type="Script" uid="uid://bbookv36piwvg" path="res://main_scene/game_manager.gd" id="1_ctrpd"]
-[ext_resource type="PackedScene" uid="uid://limqqekoiruf" path="res://scenes/map.tscn" id="2_twbfk"]
-
-[sub_resource type="Environment" id="Environment_twbfk"]
-background_mode = 2
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_ctrpd")
-
-[node name="Map" parent="." instance=ExtResource("2_twbfk")]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_twbfk")
-
-[node name="Sunlight" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.477134, -0.499416, 0.723137, 0.167976, 0.859495, 0.482756, -0.862628, -0.10887, 0.493984, 0, 0, 0)
