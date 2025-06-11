@@ -1,0 +1,154 @@
+[gd_scene load_steps=8 format=3 uid="uid://dolynv3sxhouy"]
+
+[ext_resource type="Script" uid="uid://dgbshy8tmywqy" path="res://block_2_manager.gd" id="1_lhjtp"]
+[ext_resource type="AudioStream" uid="uid://c7r00owy6elwm" path="res://Doom OST - E1M1 - At Doom's Gate.mp3" id="2_a72x6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0ql4o"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0ql4o"]
+
+[sub_resource type="Animation" id="Animation_lhjtp"]
+resource_name = "welcome"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/CanvasLayer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(10, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/CanvasLayer/Label2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(10, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a72x6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/CanvasLayer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/CanvasLayer/Label2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u01wk"]
+_data = {
+&"RESET": SubResource("Animation_a72x6"),
+&"welcome": SubResource("Animation_lhjtp")
+}
+
+[node name="Block2Manager" type="Area3D"]
+script = ExtResource("1_lhjtp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_0ql4o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_0ql4o")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_a72x6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_u01wk")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="AnimationPlayer"]
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -133.0
+offset_top = -109.0
+offset_right = 1279.0
+offset_bottom = 767.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="AnimationPlayer/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 188.0
+offset_top = 213.0
+offset_right = 953.0
+offset_bottom = 365.0
+theme_override_font_sizes/font_size = 81
+text = "VÍTEJ NA STRAHOVĚ"
+
+[node name="Label2" type="Label" parent="AnimationPlayer/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 163.0
+offset_top = 359.0
+offset_right = 1212.0
+offset_bottom = 511.0
+theme_override_font_sizes/font_size = 111
+text = "vytvořil F, F, F"
+
+[node name="Label3" type="Label" parent="AnimationPlayer/CanvasLayer"]
+offset_left = 483.0
+offset_top = 64.0
+offset_right = 1082.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 41
+text = "Quest 1.1 - Jdi za hospodářkou"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
