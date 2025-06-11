@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bh1bx58xo7kmm"]
 
 [ext_resource type="Script" uid="uid://bbookv36piwvg" path="res://main_scene/game_manager.gd" id="1_ctrpd"]
-[ext_resource type="PackedScene" uid="uid://bdcmbkjq868ru" path="res://main_scene/player.tscn" id="2_twbfk"]
+[ext_resource type="PackedScene" path="res://main_scene/player.tscn" id="2_twbfk"]
 [ext_resource type="PackedScene" uid="uid://limqqekoiruf" path="res://scenes/map.tscn" id="3_ddapi"]
 
 [sub_resource type="Environment" id="Environment_ddapi"]
