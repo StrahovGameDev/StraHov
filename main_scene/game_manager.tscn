@@ -1,12 +1,137 @@
-[gd_scene load_steps=7 format=3 uid="uid://bh1bx58xo7kmm"]
+[gd_scene load_steps=12 format=3 uid="uid://bh1bx58xo7kmm"]
 
 [ext_resource type="Script" uid="uid://bbookv36piwvg" path="res://main_scene/game_manager.gd" id="1_ctrpd"]
 [ext_resource type="PackedScene" uid="uid://djesgf26jvqba" path="res://player.tscn" id="2_ddapi"]
 [ext_resource type="PackedScene" uid="uid://limqqekoiruf" path="res://scenes/map.tscn" id="3_ddapi"]
 [ext_resource type="PackedScene" uid="uid://cv2buc5hncyui" path="res://scenes/dialog_trigger.tscn" id="4_1lmva"]
 [ext_resource type="PackedScene" uid="uid://dik6ufaanpog5" path="res://main_menu.tscn" id="5_p1t4w"]
+[ext_resource type="AudioStream" uid="uid://btoo2tlcjclu2" path="res://Adam Babuljak - STRAHOV.mp3" id="6_5f7xb"]
+[ext_resource type="Script" uid="uid://b2xqymkpix5sk" path="res://animation_player.gd" id="6_v2o6d"]
 
 [sub_resource type="Environment" id="Environment_ddapi"]
+
+[sub_resource type="Animation" id="Animation_v2o6d"]
+resource_name = "cutscene1.1"
+length = 90.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30, 60, 89.1023),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(315.619, 212.768, 20.358), Vector3(-28.191, 106.396, -463.943), Vector3(-131.607, 53.6266, 109.925), Vector3(-51.4036, 20.096, 238.959)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 30, 60, 89.1023),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.554823, 1.5708, -3.3595e-08), Vector3(-0.554823, -3.00294, -3.3595e-08), Vector3(-0.554823, -1.08528, -7.44733e-08), Vector3(-0.554823, -0.731258, -8.99782e-08)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:fov")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 90),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [75.0, 19.5]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(90),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"sound_stop"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera3D:current")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 90),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_yvaem"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-28.191, 106.396, -463.943)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.554823, -3.00294, -3.3595e-08)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:fov")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D:current")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0buo7"]
+_data = {
+&"RESET": SubResource("Animation_yvaem"),
+&"cutscene1.1": SubResource("Animation_v2o6d")
+}
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_ctrpd")
@@ -28,6 +153,16 @@ transform = Transform3D(0.799737, -0.46758, 0.376549, 0, 0.627216, 0.778846, -0.
 [node name="CanvasLayer" parent="." instance=ExtResource("5_p1t4w")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.977046, 0.21303, 0, -0.21303, 0.977046, 0, 2.04845, 5.20059)
+transform = Transform3D(-0.990404, 0.0728054, -0.117473, -2.85556e-08, 0.849994, 0.526793, 0.138205, 0.521737, -0.841837, -28.191, 106.396, -463.943)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0buo7")
+}
+script = ExtResource("6_v2o6d")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer"]
+stream = ExtResource("6_5f7xb")
+autoplay = true
 
 [editable path="Map"]

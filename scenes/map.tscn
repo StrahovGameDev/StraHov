@@ -44,3 +44,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.236, 0, -308.031)
 
 [node name="Block12" parent="Blocks" instance=ExtResource("2_gldc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7125, 0, -352.249)
+
+[node name="BusStation" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8129, 0, 215.719)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="BusStation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.861389, 1.81844, 0.921936)
+size = Vector3(5, 2, 3)
