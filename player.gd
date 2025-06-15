@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var dialog = $CanvasLayer/Dialog
 
 @export var speed = 5.0
+const DEFAULT_SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 var mouse_sens = 0.5
@@ -96,6 +97,22 @@ func _process(delta):
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 	
+	speed = DEFAULT_SPEED
+	
+	if Input.is_action_pressed("sprint"):
+		speed = 20
+		#print("sprint")
+	
+	if Input.is_action_pressed("duck"):
+		speed = 2
+		$CollisionShape3D.disabled = true
+		$CollisionShape3D2.disabled = false
+		head.position.y -= 15 * delta
+	else:
+		$CollisionShape3D.disabled = false
+		$CollisionShape3D2.disabled = true
+		head.position.y += 15 * delta
+	head.position.y = clamp(head.position.y, -0.5, 1.0)
 	
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()

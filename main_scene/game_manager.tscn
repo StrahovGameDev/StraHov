@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bbookv36piwvg" path="res://main_scene/game_manager.gd" id="1_ctrpd"]
 [ext_resource type="PackedScene" uid="uid://djesgf26jvqba" path="res://player.tscn" id="2_ddapi"]
 [ext_resource type="PackedScene" uid="uid://limqqekoiruf" path="res://scenes/map.tscn" id="3_ddapi"]
-[ext_resource type="PackedScene" path="res://scenes/dialog_trigger.tscn" id="4_1lmva"]
+[ext_resource type="PackedScene" uid="uid://cv2buc5hncyui" path="res://scenes/dialog_trigger.tscn" id="4_1lmva"]
 [ext_resource type="PackedScene" uid="uid://dik6ufaanpog5" path="res://main_menu.tscn" id="5_p1t4w"]
 
 [sub_resource type="Environment" id="Environment_ddapi"]
@@ -26,5 +26,8 @@ environment = SubResource("Environment_ddapi")
 transform = Transform3D(0.799737, -0.46758, 0.376549, 0, 0.627216, 0.778846, -0.60035, -0.622872, 0.501608, 0, 0, 0)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_p1t4w")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.977046, 0.21303, 0, -0.21303, 0.977046, 0, 2.04845, 5.20059)
 
 [editable path="Map"]
