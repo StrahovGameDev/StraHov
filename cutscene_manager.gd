@@ -6,7 +6,6 @@ var cutscenes: Dictionary = {
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action("escape"):
-		print("ESCAPE")
 		skip_cutscene()
 
 
@@ -20,4 +19,4 @@ func play_cutscene(cutscene_id: String) -> void:
 
 func skip_cutscene() -> void:
 	stop()
-	
+	stream = null
