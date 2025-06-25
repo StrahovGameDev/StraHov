@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c07q3pntyj0fy"]
+[gd_scene load_steps=5 format=3 uid="uid://c07q3pntyj0fy"]
 
 [ext_resource type="Shader" uid="uid://d3axggsxnt2ng" path="res://pause_menu/pause_menu.gdshader" id="1_rd7dy"]
+[ext_resource type="Script" uid="uid://qx11yws8bubg" path="res://pause_menu/pause.gd" id="1_uwtdo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uwtdo"]
 shader = ExtResource("1_rd7dy")
@@ -12,6 +13,7 @@ Button/font_sizes/font_size = 75
 [node name="pause_menu" type="CanvasLayer"]
 
 [node name="pause" type="Control" parent="."]
+process_mode = 3
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
@@ -19,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uwtdo")
 
 [node name="blur" type="ColorRect" parent="pause"]
 material = SubResource("ShaderMaterial_uwtdo")
@@ -53,14 +56,18 @@ text = "RESUME"
 layout_mode = 2
 text = "QUIT"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="pause"]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+offset_left = -405.0
+offset_right = 405.0
+offset_bottom = 137.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 100
 text = "GAME IS PAUSED"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="pause/VBoxContainer/resume" to="pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="pause/VBoxContainer/quit" to="pause" method="_on_quit_pressed"]
