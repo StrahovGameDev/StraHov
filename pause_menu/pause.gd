@@ -4,7 +4,7 @@ func _ready() -> void:
 	$"..".visible = false
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause"):
+	if event.is_action_pressed("escape"):
 		get_tree().paused = true
 		$"..".visible = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
