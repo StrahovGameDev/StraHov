@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dik6ufaanpog5"]
 
-[ext_resource type="Script" uid="uid://b5ildpusavvcn" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://b5ildpusavvcn" path="res://main_menu/main_menu.gd" id="1_06t4h"]
 
 [sub_resource type="Theme" id="Theme_rhts7"]
 Button/font_sizes/font_size = 50

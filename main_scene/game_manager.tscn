@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cv2buc5hncyui" path="res://scenes/dialog_trigger.tscn" id="4_1lmva"]
 [ext_resource type="PackedScene" uid="uid://dik6ufaanpog5" path="res://main_menu.tscn" id="5_p1t4w"]
 [ext_resource type="PackedScene" uid="uid://c8kybpvtqyg1" path="res://cutscene_manager.tscn" id="8_yvaem"]
+[ext_resource type="PackedScene" path="res://scenes/dialog_trigger.tscn" id="4_1lmva"]
+[ext_resource type="PackedScene" uid="uid://c07q3pntyj0fy" path="res://pause_menu/pause_menu.tscn" id="5_5f7xb"]
+[ext_resource type="PackedScene" uid="uid://dik6ufaanpog5" path="res://main_menu/main_menu.tscn" id="5_p1t4w"]
 
 [sub_resource type="Environment" id="Environment_ddapi"]
 
@@ -25,6 +28,8 @@ environment = SubResource("Environment_ddapi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.799737, -0.46758, 0.376549, 0, 0.627216, 0.778846, -0.60035, -0.622872, 0.501608, 0, 0, 0)
+
+[node name="pause_menu" parent="." instance=ExtResource("5_5f7xb")]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_p1t4w")]
 
