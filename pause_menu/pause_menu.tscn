@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://c07q3pntyj0fy"]
+
+[ext_resource type="Shader" uid="uid://d3axggsxnt2ng" path="res://pause_menu/pause_menu.gdshader" id="1_rd7dy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uwtdo"]
+shader = ExtResource("1_rd7dy")
+shader_parameter/lod = 4.0
+
+[sub_resource type="Theme" id="Theme_5hbt6"]
+Button/font_sizes/font_size = 75
+
+[node name="pause_menu" type="CanvasLayer"]
+
+[node name="pause" type="Control" parent="."]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="blur" type="ColorRect" parent="pause"]
+material = SubResource("ShaderMaterial_uwtdo")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5hbt6")
+theme_override_constants/separation = 20
+
+[node name="resume" type="Button" parent="pause/VBoxContainer"]
+layout_mode = 2
+text = "RESUME"
+
+[node name="quit" type="Button" parent="pause/VBoxContainer"]
+layout_mode = 2
+text = "QUIT"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "GAME IS PAUSED"
+horizontal_alignment = 1
