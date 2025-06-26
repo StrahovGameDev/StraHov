@@ -29,8 +29,6 @@ transform = Transform3D(0.799737, -0.46758, 0.376549, 0, 0.627216, 0.778846, -0.
 
 [node name="pause_menu" parent="." instance=ExtResource("5_5f7xb")]
 
-[node name="CanvasLayer" parent="." instance=ExtResource("5_p1t4w")]
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-3.7215e-06, -0.526793, 0.849994, -2.85555e-08, 0.849994, 0.526793, -1, 1.93619e-06, -3.1783e-06, 315.619, 212.768, 20.358)
 
@@ -39,7 +37,11 @@ transform = Transform3D(1, 0, 0, 0, 0.923672, 0.383183, 0, -0.383183, 0.923672, 
 
 [node name="CutsceneManager" parent="." instance=ExtResource("8_yvaem")]
 
+[node name="main_menu" parent="." instance=ExtResource("5_p1t4w")]
+
 [connection signal="finished" from="CutsceneManager" to="pause_menu" method="_on_cutscene_manager_finished"]
 [connection signal="started" from="CutsceneManager" to="pause_menu" method="_on_cutscene_manager_started"]
+[connection signal="start" from="main_menu" to="pause_menu" method="_on_main_menu_start"]
+[connection signal="tree_exiting" from="main_menu" to="pause_menu" method="_on_main_menu_tree_exiting"]
 
 [editable path="Map"]
