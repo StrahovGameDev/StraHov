@@ -16,6 +16,7 @@ bg_color = Color(1, 1, 1, 1)
 border_color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_06t4h")
 
 [node name="main_menu" type="Control" parent="."]
 layout_mode = 3
@@ -24,7 +25,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_06t4h")
 
 [node name="ColorRect" type="ColorRect" parent="main_menu"]
 layout_mode = 1
@@ -80,6 +80,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
 action_mode = 0
 text = "QUIT"
 
-[connection signal="pressed" from="main_menu/VBoxContainer/Start" to="main_menu" method="_on_start_pressed"]
-[connection signal="pressed" from="main_menu/VBoxContainer/Options" to="main_menu" method="_on_options_pressed"]
+[connection signal="pressed" from="main_menu/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="main_menu/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="main_menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="main_menu/VBoxContainer/Quit" to="main_menu" method="_on_quit_pressed"]

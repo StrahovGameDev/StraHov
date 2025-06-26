@@ -1,4 +1,3 @@
 extends Node
 
-func _ready() -> void:
-	$CutsceneManager.play_cutscene("cutscene1.1")
+#when you are reading this, it is time to hydrate yourself :P
