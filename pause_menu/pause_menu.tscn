@@ -11,6 +11,7 @@ shader_parameter/lod = 4.0
 Button/font_sizes/font_size = 75
 
 [node name="pause_menu" type="CanvasLayer"]
+script = ExtResource("1_uwtdo")
 
 [node name="pause" type="Control" parent="."]
 process_mode = 3
@@ -21,7 +22,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_uwtdo")
 
 [node name="blur" type="ColorRect" parent="pause"]
 material = SubResource("ShaderMaterial_uwtdo")
@@ -69,5 +69,5 @@ theme_override_font_sizes/font_size = 100
 text = "GAME IS PAUSED"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="pause/VBoxContainer/resume" to="pause" method="_on_resume_pressed"]
-[connection signal="pressed" from="pause/VBoxContainer/quit" to="pause" method="_on_quit_pressed"]
+[connection signal="pressed" from="pause/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="pause/VBoxContainer/quit" to="." method="_on_quit_pressed"]
