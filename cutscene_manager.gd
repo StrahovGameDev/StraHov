@@ -29,8 +29,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		elif event.is_action("escape") and !event.is_pressed():
 			escape_held = false
-	else:
-		return
 
 
 func play_cutscene(cutscene_id: String) -> void:
@@ -44,5 +42,5 @@ func play_cutscene(cutscene_id: String) -> void:
 
 func skip_cutscene() -> void:
 	stop()
-	finished.emit()
 	stream = null
+	finished.emit()
