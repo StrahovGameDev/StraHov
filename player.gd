@@ -105,15 +105,18 @@ func _process(delta):
 		speed = 20
 		#print("sprint")
 	
-	if Input.is_action_pressed("duck"):
+	if Input.is_action_pressed("duck") and !weapon_selector:
 		speed = 2
 		$CollisionShape3D.disabled = true
 		$CollisionShape3D2.disabled = false
 		head.position.y -= 15 * delta
 	else:
-		$CollisionShape3D.disabled = false
-		$CollisionShape3D2.disabled = true
-		head.position.y += 15 * delta
+		if !weapon_selector:
+			$CollisionShape3D.disabled = false
+			$CollisionShape3D2.disabled = true
+			head.position.y += 15 * delta
+
+	
 	head.position.y = clamp(head.position.y, -0.5, 1.0)
 	
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
