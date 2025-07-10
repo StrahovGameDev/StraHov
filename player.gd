@@ -14,6 +14,8 @@ var current_dialog = ""
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+var weapon_selector: bool = false
+
 #region
 # GodMode variables
 var console_visible: bool = false
@@ -36,7 +38,7 @@ func _input(event: InputEvent) -> void:
 	if console_visible:
 		return
 
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and !weapon_selector:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(90))
@@ -116,7 +118,7 @@ func _process(delta):
 	
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	if direction and !weapon_selector:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 	else:
@@ -133,3 +135,11 @@ func god_function():
 
 func _on_set_player_variables(var_name: String, value: Variant):
 	set(var_name, value)
+
+
+func _on_weapon_manager_g_pressed() -> void:
+	weapon_selector = true
+
+
+func _on_weapon_manager_g_released() -> void:
+	weapon_selector = false

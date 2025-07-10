@@ -130,3 +130,6 @@ offset_right = 964.0
 offset_bottom = 375.0
 
 [node name="WeaponManager" parent="." instance=ExtResource("5_sweqy")]
+
+[connection signal="g_pressed" from="WeaponManager" to="." method="_on_weapon_manager_g_pressed"]
+[connection signal="g_released" from="WeaponManager" to="." method="_on_weapon_manager_g_released"]
