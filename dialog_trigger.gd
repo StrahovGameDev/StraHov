@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		body.dialog_label.visible = true
+		body.is_dialog_pressable = true
 		body.current_dialog = text
 
 
@@ -21,3 +22,5 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		body.dialog_label.visible = false
 		body.current_dialog = ""
+		body.is_dialog_pressable = false
+		body.dialog.visible = false
