@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://djesgf26jvqba"]
+[gd_scene load_steps=12 format=4 uid="uid://djesgf26jvqba"]
 
 [ext_resource type="Script" uid="uid://bdbrbuktuwnt8" path="res://player.gd" id="1_l7a3g"]
 [ext_resource type="Script" uid="uid://cjkdvcailusal" path="res://cross_hair.gd" id="2_ujf4b"]
 [ext_resource type="PackedScene" uid="uid://blnv74irts5gj" path="res://console.tscn" id="2_whsb8"]
 [ext_resource type="Texture2D" uid="uid://b3kq5qbad6e34" path="res://player_kafka_kafka2.png" id="3_hqtel"]
+[ext_resource type="PackedScene" uid="uid://rukcl2t6m65y" path="res://weapon_manager.tscn" id="5_sweqy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1tgjw"]
 
@@ -127,3 +128,5 @@ offset_left = 157.0
 offset_top = 279.0
 offset_right = 964.0
 offset_bottom = 375.0
+
+[node name="WeaponManager" parent="." instance=ExtResource("5_sweqy")]
