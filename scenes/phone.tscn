@@ -1,0 +1,148 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmcdpwrrpli6k"]
+
+[ext_resource type="Script" uid="uid://b7d2sfhe4k04u" path="res://phone.gd" id="1_08mii"]
+
+[node name="Phone" type="CanvasLayer"]
+script = ExtResource("1_08mii")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 952.0
+offset_top = 298.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.176419, 0.176419, 0.176419, 1)
+
+[node name="Time" type="Control" parent="Background"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -110.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TimeBG" type="ColorRect" parent="Background/Time"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 35.0
+offset_right = 130.0
+offset_bottom = 85.0
+color = Color(0, 0, 0, 1)
+
+[node name="TimeLabel" type="Label" parent="Background/Time"]
+texture_filter = 1
+offset_left = 20.0
+offset_top = 35.0
+offset_right = 130.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 25
+text = "11:25:35"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Frame" type="Control" parent="Background"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -150.0
+offset_bottom = -300.0
+
+[node name="Left" type="ColorRect" parent="Background/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 5.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Top" type="ColorRect" parent="Background/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 150.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Right" type="ColorRect" parent="Background/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 145.0
+offset_right = 150.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Right2" type="ColorRect" parent="Background/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 295.0
+offset_right = 150.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ButtonsContainer" type="GridContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 387.0
+offset_top = -188.0
+offset_right = 515.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 3
+
+[node name="Button" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Button6" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Button7" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Button8" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Button9" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
