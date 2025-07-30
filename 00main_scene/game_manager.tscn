@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c07q3pntyj0fy" path="res://pause_menu/pause_menu.tscn" id="5_5f7xb"]
 [ext_resource type="PackedScene" uid="uid://dik6ufaanpog5" path="res://main_menu/main_menu.tscn" id="5_p1t4w"]
 [ext_resource type="PackedScene" uid="uid://bmcdpwrrpli6k" path="res://scenes/phone.tscn" id="8_0buo7"]
-[ext_resource type="PackedScene" path="res://cutscene_manager.tscn" id="8_yvaem"]
+[ext_resource type="PackedScene" uid="uid://c8kybpvtqyg1" path="res://cutscene_manager.tscn" id="8_yvaem"]
 
 [sub_resource type="Environment" id="Environment_ddapi"]
 
@@ -15,12 +15,51 @@
 script = ExtResource("1_ctrpd")
 
 [node name="Player" parent="." instance=ExtResource("2_ddapi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09818, 0)
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 33.4796, 1.098, -17.7073)
 
 [node name="DialogTrigger" parent="." instance=ExtResource("4_1lmva")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15513, -11.1691)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 110.377, 1.15513, 0.25398)
 
 [node name="Map" parent="." instance=ExtResource("3_ddapi")]
+
+[node name="Block" parent="Map/Blocks" index="0"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 63.7102, 0, 49.1763)
+
+[node name="Block2" parent="Map/Blocks" index="1"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 137.571, 0, 50.3234)
+
+[node name="Block3" parent="Map/Blocks" index="2"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 192.089, 0, 48.8696)
+
+[node name="Block4" parent="Map/Blocks" index="3"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 246.366, 0, 48.708)
+
+[node name="Block5" parent="Map/Blocks" index="4"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 107.98, 0, -87.3125)
+
+[node name="Block6" parent="Map/Blocks" index="5"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 162.79, 0, -89.2065)
+
+[node name="Block7" parent="Map/Blocks" index="6"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 216.6, 0, -89.1103)
+
+[node name="Block8" parent="Map/Blocks" index="7"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 328.028, 0, 61.1865)
+
+[node name="Block9" parent="Map/Blocks" index="8"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 382.547, 0, 61.7881)
+
+[node name="Block10" parent="Map/Blocks" index="9"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 436.381, 0, 57.9097)
+
+[node name="Block11" parent="Map/Blocks" index="10"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 443.734, 0, -31.8106)
+
+[node name="Block12" parent="Map/Blocks" index="11"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 480.793, 0, 13.1966)
+
+[node name="CSGBox3D" parent="Map/BusStation" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 76.7746, 1.81844, -247.157)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ddapi")
@@ -34,7 +73,7 @@ transform = Transform3D(0.799737, -0.46758, 0.376549, 0, 0.627216, 0.778846, -0.
 transform = Transform3D(-3.7215e-06, -0.526793, 0.849994, -2.85555e-08, 0.849994, 0.526793, -1, 1.93619e-06, -3.1783e-06, 315.619, 212.768, 20.358)
 
 [node name="Camera3D2" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.923672, 0.383183, 0, -0.383183, 0.923672, 0.122904, 3.19351, 2.94028)
+transform = Transform3D(1.19249e-08, 0.382683, -0.92388, 0, 0.92388, 0.382683, 1, -4.56345e-09, 1.10172e-08, 30.4796, 3.194, -17.7073)
 
 [node name="CutsceneManager" parent="." instance=ExtResource("8_yvaem")]
 
