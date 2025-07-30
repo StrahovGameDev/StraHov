@@ -1,14 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh681jq7gntr8"]
+[gd_scene load_steps=5 format=3 uid="uid://dh681jq7gntr8"]
+
+[ext_resource type="Texture2D" uid="uid://b2f8gkqp0t4ts" path="res://assets/map.jpg" id="1_b0j75"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oqplg"]
+albedo_texture = ExtResource("1_b0j75")
+albedo_texture_force_srgb = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_unmtw"]
-size = Vector2(1000, 1000)
+size = Vector2(1258.33, 725.641)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_unmtw"]
-size = Vector3(1000, 0, 1000)
+size = Vector3(1258.33, 0, 725.641)
 
 [node name="Terrain" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_oqplg")
 mesh = SubResource("PlaneMesh_unmtw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
