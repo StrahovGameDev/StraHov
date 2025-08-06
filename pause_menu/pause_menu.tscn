@@ -11,6 +11,7 @@ shader_parameter/lod = 4.0
 Button/font_sizes/font_size = 75
 
 [node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_uwtdo")
 
 [node name="pause" type="Control" parent="."]
