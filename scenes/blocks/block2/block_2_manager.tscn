@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dolynv3sxhouy"]
 
-[ext_resource type="Script" uid="uid://dgbshy8tmywqy" path="res://block_2_manager.gd" id="1_lhjtp"]
+[ext_resource type="Script" uid="uid://dgbshy8tmywqy" path="res://scenes/blocks/block2/block_2_manager.gd" id="1_lhjtp"]
 [ext_resource type="AudioStream" uid="uid://c7r00owy6elwm" path="res://Doom OST - E1M1 - At Doom's Gate.mp3" id="2_a72x6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0ql4o"]

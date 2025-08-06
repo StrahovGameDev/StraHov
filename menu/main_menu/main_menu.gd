@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-##emits when start button was pressed
+# Emits when start button was pressed
 signal start
 
 func _ready() -> void:
@@ -9,7 +9,7 @@ func _ready() -> void:
 func _on_start_pressed() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$".".queue_free()
-	$"../CutsceneManager".play_cutscene("cutscene1.1")
+	$"../CutsceneManager".play_cutscene("cutscene1_1")
 	start.emit()
 
 func _on_options_pressed() -> void:

@@ -3,11 +3,11 @@ extends VideoStreamPlayer
 var last_time_escape_pressed: float
 var escape_held: bool = false
 
-## emited when cutscene starts
-signal started 
+# Emited when cutscene starts
+signal started
 
 var cutscenes: Dictionary = {
-	"cutscene1.1": "res://cutscenes/cutscene1_1.ogv",
+	"cutscene1_1": "uid://4hxdqqtpxowr",
 }
 
 

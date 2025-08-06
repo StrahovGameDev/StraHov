@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://btoo2tlcjclu2"
+path="res://.godot/imported/Adam Babuljak - STRAHOV.mp3-b01a1ba5c564f6692b9f07989ab30c9f.mp3str"
+
+[deps]
+
+source_file="res://cutscenes/cutscene1/Adam Babuljak - STRAHOV.mp3"
+dest_files=["res://.godot/imported/Adam Babuljak - STRAHOV.mp3-b01a1ba5c564f6692b9f07989ab30c9f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

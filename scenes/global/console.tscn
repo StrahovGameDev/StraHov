@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://blnv74irts5gj"]
 
-[ext_resource type="Script" uid="uid://cyhy4yyc0pycn" path="res://console.gd" id="1_lu137"]
+[ext_resource type="Script" uid="uid://cyhy4yyc0pycn" path="res://scenes/global/console.gd" id="1_lu137"]
 
 [node name="Console" type="Control"]
 layout_mode = 3

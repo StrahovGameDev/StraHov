@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://limqqekoiruf"]
 
-[ext_resource type="PackedScene" uid="uid://dh681jq7gntr8" path="res://scenes/terrain.tscn" id="1_paxxb"]
-[ext_resource type="PackedScene" uid="uid://bv6pedn8ngjc1" path="res://scenes/block.tscn" id="2_gldc4"]
+[ext_resource type="PackedScene" uid="uid://dh681jq7gntr8" path="res://scenes/blocks/terrain.tscn" id="1_paxxb"]
+[ext_resource type="PackedScene" uid="uid://bv6pedn8ngjc1" path="res://scenes/blocks/block.tscn" id="2_gldc4"]
 
 [node name="Map" type="Node3D"]
 

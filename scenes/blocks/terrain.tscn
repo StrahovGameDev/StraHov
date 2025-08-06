@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dh681jq7gntr8"]
 
-[ext_resource type="Texture2D" uid="uid://b2f8gkqp0t4ts" path="res://assets/map.jpg" id="1_b0j75"]
+[ext_resource type="Texture2D" uid="uid://b2f8gkqp0t4ts" path="res://assets/map.jpg" id="1_swssv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oqplg"]
-albedo_texture = ExtResource("1_b0j75")
+albedo_texture = ExtResource("1_swssv")
 albedo_texture_force_srgb = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_unmtw"]
