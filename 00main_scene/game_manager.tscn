@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bh1bx58xo7kmm"]
+[gd_scene load_steps=11 format=3 uid="uid://bh1bx58xo7kmm"]
 
 [ext_resource type="Script" uid="uid://bbookv36piwvg" path="res://00main_scene/game_manager.gd" id="1_ctrpd"]
 [ext_resource type="PackedScene" uid="uid://djesgf26jvqba" path="res://player.tscn" id="2_ddapi"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dik6ufaanpog5" path="res://main_menu/main_menu.tscn" id="5_p1t4w"]
 [ext_resource type="PackedScene" uid="uid://bmcdpwrrpli6k" path="res://scenes/phone.tscn" id="8_0buo7"]
 [ext_resource type="PackedScene" uid="uid://c8kybpvtqyg1" path="res://cutscene_manager.tscn" id="8_yvaem"]
+[ext_resource type="PackedScene" uid="uid://bm06vvgv40ypg" path="res://shelf.tscn" id="9_ot8w6"]
 
 [sub_resource type="Environment" id="Environment_ddapi"]
 
@@ -80,6 +81,9 @@ transform = Transform3D(1.19249e-08, 0.382683, -0.92388, 0, 0.92388, 0.382683, 1
 [node name="main_menu" parent="." instance=ExtResource("5_p1t4w")]
 
 [node name="Phone" parent="." instance=ExtResource("8_0buo7")]
+
+[node name="Shelf" parent="." instance=ExtResource("9_ot8w6")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 38.0836, 2.12777, -18.9955)
 
 [connection signal="finished" from="CutsceneManager" to="pause_menu" method="_on_cutscene_manager_finished"]
 [connection signal="started" from="CutsceneManager" to="pause_menu" method="_on_cutscene_manager_started"]

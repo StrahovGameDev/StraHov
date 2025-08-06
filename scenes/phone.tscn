@@ -35,6 +35,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="TimeLabel" type="Label" parent="Background/Time"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 20.0
 offset_top = 35.0
 offset_right = 130.0
@@ -46,6 +47,7 @@ vertical_alignment = 1
 
 [node name="Frame" type="Control" parent="Background"]
 layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -150.0
