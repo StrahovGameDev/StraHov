@@ -5,7 +5,7 @@ extends CharacterBody3D
 @onready var dialog = $CanvasLayer/Dialog
 
 @export var speed = 5.0
-const DEFAULT_SPEED = 5.0
+const DEFAULT_SPEED = 1.8
 const JUMP_VELOCITY = 4.5
 
 var mouse_sens = 0.5
@@ -100,10 +100,9 @@ func _process(delta):
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 	
-	speed = DEFAULT_SPEED
 	
 	if Input.is_action_pressed("sprint"):
-		speed = 20
+		speed = 10
 		#print("sprint")
 	
 	if Input.is_action_pressed("duck") and !weapon_selector:
@@ -128,6 +127,8 @@ func _process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
+		print(speed)
+	speed = DEFAULT_SPEED
 	move_and_slide()
 
 # If special quest completed, add GodMode

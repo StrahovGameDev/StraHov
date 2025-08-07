@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh1bx58xo7kmm"]
+[gd_scene load_steps=12 format=3 uid="uid://bh1bx58xo7kmm"]
 
 [ext_resource type="Script" uid="uid://bbookv36piwvg" path="res://00main_scene/game_manager.gd" id="1_ctrpd"]
 [ext_resource type="PackedScene" uid="uid://djesgf26jvqba" path="res://scenes/player/player.tscn" id="2_ddapi"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bmcdpwrrpli6k" path="res://scenes/player/phone.tscn" id="8_0buo7"]
 [ext_resource type="PackedScene" uid="uid://c8kybpvtqyg1" path="res://cutscenes/cutscene_manager.tscn" id="8_yvaem"]
 [ext_resource type="PackedScene" uid="uid://bm06vvgv40ypg" path="res://shelf.tscn" id="9_ot8w6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ot8w6"]
+size = Vector3(5.87, 1, 2.35)
 
 [sub_resource type="Environment" id="Environment_ddapi"]
 
@@ -28,6 +31,18 @@ transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 63.7102,
 
 [node name="Block2" parent="Map/Blocks" index="1"]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 137.571, 0, 50.3234)
+
+[node name="StrahovPokoj" type="StaticBody3D" parent="Map/Blocks/Block2" index="3"]
+transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, -36.4883, 0.68666, 68.2429)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Blocks/Block2/StrahovPokoj"]
+shape = SubResource("BoxShape3D_ot8w6")
+
+[node name="StrahovPokoj2" type="StaticBody3D" parent="Map/Blocks/Block2" index="4"]
+transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, -36.5451, 0.68666, 79.3736)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Blocks/Block2/StrahovPokoj2"]
+shape = SubResource("BoxShape3D_ot8w6")
 
 [node name="Block3" parent="Map/Blocks" index="2"]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 192.089, 0, 48.8696)
