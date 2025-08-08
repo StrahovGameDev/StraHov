@@ -5,7 +5,7 @@ extends CharacterBody3D
 @onready var dialog = $CanvasLayer/Dialog
 
 @export var speed = 5.0
-const DEFAULT_SPEED = 1.8
+const DEFAULT_SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 var mouse_sens = 0.5
@@ -38,6 +38,14 @@ func _ready():
 func _input(event: InputEvent) -> void:
 	if console_visible:
 		return
+	
+	#region
+#	 Delete, just for testing
+	if event.is_action_pressed("t"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if event.is_action_pressed("y"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#endregion
 
 	if event is InputEventMouseMotion and !weapon_selector:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
@@ -81,6 +89,7 @@ func flying_toggle():
 func _process(delta):
 	# Debug, delete later
 	$FPS.text = "FPS: " + str(Engine.get_frames_per_second())
+	
 	
 	if console_visible:
 		return
@@ -127,7 +136,7 @@ func _process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
-		print(speed)
+		#print(speed)
 	speed = DEFAULT_SPEED
 	move_and_slide()
 

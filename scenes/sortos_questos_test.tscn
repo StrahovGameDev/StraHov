@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0h6plfgfa4ic"]
+
+[ext_resource type="Script" uid="uid://c0jsrlxup0qnd" path="res://scenes/sortos_questos_test.gd" id="1_ew5mk"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ej0tv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ew5mk"]
+radius = 1.41182
+
+[node name="SortosQuestos" type="Area3D"]
+script = ExtResource("1_ew5mk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.720397, 0)
+mesh = SubResource("CapsuleMesh_ej0tv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.990132, 0)
+shape = SubResource("SphereShape3D_ew5mk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

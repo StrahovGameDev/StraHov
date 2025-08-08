@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bh1bx58xo7kmm"]
+[gd_scene load_steps=15 format=3 uid="uid://bh1bx58xo7kmm"]
 
 [ext_resource type="Script" uid="uid://bbookv36piwvg" path="res://00main_scene/game_manager.gd" id="1_ctrpd"]
 [ext_resource type="PackedScene" uid="uid://djesgf26jvqba" path="res://scenes/player/player.tscn" id="2_ddapi"]
+[ext_resource type="PackedScene" uid="uid://d0h6plfgfa4ic" path="res://scenes/sortos_questos_test.tscn" id="2_q35ya"]
 [ext_resource type="PackedScene" uid="uid://limqqekoiruf" path="res://scenes/blocks/map.tscn" id="3_ddapi"]
 [ext_resource type="PackedScene" uid="uid://cv2buc5hncyui" path="res://scenes/global/dialog_trigger.tscn" id="4_1lmva"]
 [ext_resource type="PackedScene" uid="uid://c07q3pntyj0fy" path="res://menu/pause_menu/pause_menu.tscn" id="5_5f7xb"]
@@ -9,14 +10,21 @@
 [ext_resource type="PackedScene" uid="uid://bmcdpwrrpli6k" path="res://scenes/player/phone.tscn" id="8_0buo7"]
 [ext_resource type="PackedScene" uid="uid://c8kybpvtqyg1" path="res://cutscenes/cutscene_manager.tscn" id="8_yvaem"]
 [ext_resource type="PackedScene" uid="uid://bm06vvgv40ypg" path="res://shelf.tscn" id="9_ot8w6"]
+[ext_resource type="PackedScene" uid="uid://bejpr1711ebci" path="res://scenes/frantos_qestos.tscn" id="11_q35ya"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ot8w6"]
 size = Vector3(5.87, 1, 2.35)
 
 [sub_resource type="Environment" id="Environment_ddapi"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_cvbbf"]
+size = Vector3(2, 2, 2)
+
 [node name="GameManager" type="Node"]
 script = ExtResource("1_ctrpd")
+
+[node name="SortosQuestos" parent="." instance=ExtResource("2_q35ya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.6135, 1.50855, -6.06856)
 
 [node name="Player" parent="." instance=ExtResource("2_ddapi")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 33.4796, 1.098, -17.7073)
@@ -99,6 +107,13 @@ transform = Transform3D(1.19249e-08, 0.382683, -0.92388, 0, 0.92388, 0.382683, 1
 
 [node name="Shelf" parent="." instance=ExtResource("9_ot8w6")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 38.0836, 2.12777, -18.9955)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 2, -9.42897)
+mesh = SubResource("BoxMesh_cvbbf")
+
+[node name="FrantosQestos" parent="." instance=ExtResource("11_q35ya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0438, 1.48729, -4.79482)
 
 [connection signal="finished" from="CutsceneManager" to="pause_menu" method="_on_cutscene_manager_finished"]
 [connection signal="started" from="CutsceneManager" to="pause_menu" method="_on_cutscene_manager_started"]

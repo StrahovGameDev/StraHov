@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bejpr1711ebci"]
+
+[ext_resource type="Script" uid="uid://d2kx0dk6dhqve" path="res://frantos_qestos.gd" id="1_vte4w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fnus4"]
+size = Vector3(2.02637, 1.77344, 2.54395)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t08yg"]
+
+[node name="FrantosQestos" type="Area3D"]
+script = ExtResource("1_vte4w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0698242)
+shape = SubResource("BoxShape3D_fnus4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_t08yg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
