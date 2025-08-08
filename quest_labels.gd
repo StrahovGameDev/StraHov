@@ -7,10 +7,12 @@ func _ready() -> void:
 
 
 func add_quest_label(index) -> void:
-	var label: Label = Label.new()
-	label.text = QuestManager.quest_array[index]
-	vbox.add_child(label)
+	var button: Button = Button.new()
+	button.text = QuestManager.quest_array[index].get("name")
+	button.pressed.connect(_on_quest_button_pressed.bind(index))
+	vbox.add_child(button)
 
-func remove_quest_label() -> void:
-	pass
+func _on_quest_button_pressed(index):
+	var quest = QuestManager.quest_array[index].get("description")
+	print(quest)
 	
