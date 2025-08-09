@@ -1,10 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://cywatgt1gnx0x"]
+[gd_scene load_steps=12 format=3 uid="uid://cywatgt1gnx0x"]
 
 [ext_resource type="PackedScene" uid="uid://djesgf26jvqba" path="res://player.tscn" id="1_rupst"]
 [ext_resource type="Script" uid="uid://ds0o3j8h7xd4p" path="res://playground.gd" id="1_wt17y"]
+[ext_resource type="Script" uid="uid://qv3whpyayhum" path="res://persistent.gd" id="3_m8u5f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wt17y"]
 size = Vector3(50, 0.5, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m8u5f"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_is3ju"]
+
+[sub_resource type="Environment" id="Environment_wt17y"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 1.45
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt17y"]
+albedo_color = Color(0.854902, 0.0705882, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m8u5f"]
+material = SubResource("StandardMaterial3D_wt17y")
+
+[sub_resource type="BoxMesh" id="BoxMesh_o00ia"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4bqqs"]
+albedo_color = Color(1, 0, 1, 1)
 
 [node name="Playground" type="Node3D"]
 script = ExtResource("1_wt17y")
@@ -16,3 +37,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.221924, 0)
 shape = SubResource("BoxShape3D_wt17y")
 
 [node name="Player" parent="." instance=ExtResource("1_rupst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160156, 0)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -1.56164, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+visible = false
+shape = SubResource("BoxShape3D_m8u5f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+mesh = SubResource("BoxMesh_is3ju")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wt17y")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.54842, 0.160156, 0)
+mesh = SubResource("BoxMesh_m8u5f")
+skeleton = NodePath("../Player")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.92459, 0, 0)
+mesh = SubResource("BoxMesh_o00ia")
+surface_material_override/0 = SubResource("StandardMaterial3D_4bqqs")
+
+[node name="Persistent" type="Node" parent="."]
+script = ExtResource("3_m8u5f")
