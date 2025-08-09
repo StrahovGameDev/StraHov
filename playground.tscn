@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cywatgt1gnx0x"]
+[gd_scene load_steps=11 format=3 uid="uid://cywatgt1gnx0x"]
 
 [ext_resource type="PackedScene" uid="uid://djesgf26jvqba" path="res://player.tscn" id="1_rupst"]
 [ext_resource type="Script" uid="uid://ds0o3j8h7xd4p" path="res://playground.gd" id="1_wt17y"]
-[ext_resource type="Script" uid="uid://qv3whpyayhum" path="res://persistent.gd" id="3_m8u5f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wt17y"]
 size = Vector3(50, 0.5, 50)
@@ -61,6 +60,3 @@ skeleton = NodePath("../Player")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.92459, 0, 0)
 mesh = SubResource("BoxMesh_o00ia")
 surface_material_override/0 = SubResource("StandardMaterial3D_4bqqs")
-
-[node name="Persistent" type="Node" parent="."]
-script = ExtResource("3_m8u5f")
