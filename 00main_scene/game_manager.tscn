@@ -1,18 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://bh1bx58xo7kmm"]
+[gd_scene load_steps=11 format=3 uid="uid://bh1bx58xo7kmm"]
 
 [ext_resource type="Script" uid="uid://bbookv36piwvg" path="res://00main_scene/game_manager.gd" id="1_ctrpd"]
 [ext_resource type="PackedScene" uid="uid://djesgf26jvqba" path="res://player.tscn" id="2_ddapi"]
 [ext_resource type="PackedScene" uid="uid://limqqekoiruf" path="res://scenes/map.tscn" id="3_ddapi"]
-[ext_resource type="PackedScene" uid="uid://cv2buc5hncyui" path="res://scenes/dialog_trigger.tscn" id="4_1lmva"]
+[ext_resource type="PackedScene" path="res://scenes/dialog_trigger.tscn" id="4_1lmva"]
 [ext_resource type="PackedScene" uid="uid://c07q3pntyj0fy" path="res://pause_menu/pause_menu.tscn" id="5_5f7xb"]
 [ext_resource type="PackedScene" uid="uid://dik6ufaanpog5" path="res://main_menu/main_menu.tscn" id="5_p1t4w"]
 [ext_resource type="PackedScene" uid="uid://bmcdpwrrpli6k" path="res://scenes/phone.tscn" id="8_0buo7"]
 [ext_resource type="PackedScene" uid="uid://c8kybpvtqyg1" path="res://cutscene_manager.tscn" id="8_yvaem"]
+[ext_resource type="Script" uid="uid://t0ov3eieapak" path="res://save_manager.gd" id="9_ot8w6"]
 
 [sub_resource type="Environment" id="Environment_ddapi"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_ctrpd")
+
+[node name="SaveManger" type="Node" parent="."]
+script = ExtResource("9_ot8w6")
 
 [node name="Player" parent="." instance=ExtResource("2_ddapi")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 33.4796, 1.098, -17.7073)

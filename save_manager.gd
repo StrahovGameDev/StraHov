@@ -1,9 +1,9 @@
-extends Node3D
+extends Node
 
 @onready var to_save : CToSave = CToSave.new()
 
 var list : Array = [
-	[ CPlayer.new() , "./Player" ]
+	[ CPlayer.new() , "../Player" ]
 ]
 
 func _save() -> void:
@@ -16,9 +16,6 @@ func _load() -> void:
 	to_save = ResourceLoader.load("user://save.tres")
 	for i in range(0, to_save.list.size(), 1):
 		to_save.list[i][0]._load(get_node(list[i][1]))
-
-func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("save"):

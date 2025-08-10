@@ -5,7 +5,7 @@ func _ready() -> void:
 	self.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var current_time = Time.get_time_string_from_system()
 	$Background/Time/TimeLabel.text = current_time
 	
