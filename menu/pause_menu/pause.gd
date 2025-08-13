@@ -4,6 +4,9 @@ var pausable = false
 
 func _ready() -> void:
 	$".".visible = false
+	$pause/Label.text = tr("PAUSED")
+	$pause/VBoxContainer/resume.text = tr("RESUME")
+	$pause/VBoxContainer/quit.text = tr("QUIT")
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape") and pausable:

@@ -1,7 +1,7 @@
 extends Area3D
 
-var quest_from_sort: String = "This is your first quest."
-var sortos_description: String = "This is a description of the first quest. Your task is truly hard and spectacular but there is no time to explain it, hence I am out, bye."
+var quest_from_sort: String = tr("QUEST1_NAME")
+var sortos_description: String = tr("QUEST1_DESCRIPTION1") + "," + tr("QUEST1_DESCRIPTION2") + "," + tr("QUEST1_DESCRIPTION3") + "," + tr("QUEST1_DESCRIPTION4")
 
 
 func _on_body_entered(body: Node3D) -> void:

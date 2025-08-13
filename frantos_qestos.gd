@@ -1,7 +1,7 @@
 extends Area3D
 
-var quest_from_franta: String = "This is your SECOND quest."
-var description_franta: String = "Aha, I see, you are truly quest hunting beast. This quest is not easy, so listen up..."
+var quest_from_franta: String = tr("QUEST2_NAME")
+var description_franta: String = tr("QUEST2_DESCRIPTION1") + "," + tr("QUEST2_DESCRIPTION2") + "," + tr("QUEST2_DESCRIPTION3") + "," + tr("QUEST2_DESCRIPTION4")
 
 
 func _on_body_entered(body: Node3D) -> void:

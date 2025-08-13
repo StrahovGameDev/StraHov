@@ -2,3 +2,15 @@
 START,SPUSTIT HRU,START
 OPTIONS,MOŽNOSTI,OPTIONS
 QUIT,ODEJÍT,QUIT
+PAUSED,HRA JE POZASTAVENA,GAME IS PAUSED
+RESUME,POKRAČOVAT,RESUME
+QUEST1_NAME,Toto je tvůj první úkol.,This is your first quest.
+QUEST1_DESCRIPTION1,Toto je popis tvého prvního úkolu. Je velice těžký a úžasný,This is a description of the first quest. Your task is truly hard and spectacular
+QUEST1_DESCRIPTION2, ale to ti nemám čas vysvětlit,  but there is no time to explain it
+QUEST1_DESCRIPTION3, takže mizím, hence I am out
+QUEST1_DESCRIPTION4, čus., bye.
+QUEST2_NAME,Toto je tvůj DRUHÝ úkol.,This is your SECOND quest.
+QUEST2_DESCRIPTION1,Aha,Aha
+QUEST2_DESCRIPTION2, takže takhle, I see
+QUEST2_DESCRIPTION3, ty jsi vážně bestie lovící questy. Tenhle ale není jednoduchý, you are truly quest hunting beast. This quest is not easy
+QUEST2_DESCRIPTION4, takže dobře poslouchej..., so listen up...
