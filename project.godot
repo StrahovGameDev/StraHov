@@ -114,6 +114,10 @@ y={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://translations/translations.en.translation", "res://translations/translations.cs.translation")
+
 [layer_names]
 
 3d_physics/layer_1="collisions"

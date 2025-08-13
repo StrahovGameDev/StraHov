@@ -5,6 +5,9 @@ signal start
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	$main_menu/VBoxContainer/Start.text = tr("START")
+	$main_menu/VBoxContainer/Options.text = tr("OPTIONS")
+	$main_menu/VBoxContainer/Quit.text = tr("QUIT")
 	
 func _on_start_pressed() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
