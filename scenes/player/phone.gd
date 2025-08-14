@@ -10,6 +10,8 @@ func _process(delta: float) -> void:
 	$Background/Time/TimeLabel.text = current_time
 	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("phone"):
-		self.visible = !self.visible
+	pass
+#	q is for quest
+	#if event.is_action_pressed("phone"):
+		#self.visible = !self.visible
 	

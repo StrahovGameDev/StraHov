@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://b58irk40sfqvc"]
+
+[ext_resource type="Script" uid="uid://c8rqe075e86rn" path="res://debug_folders/filipstrahov/quest_2.gd" id="1_4y7ac"]
+[ext_resource type="Script" uid="uid://i5c3iacsacm5" path="res://debug_folders/filipstrahov/quest_dependencies/quest.gd" id="2_4y7ac"]
+[ext_resource type="Script" uid="uid://dw8ujgujfm4u1" path="res://debug_folders/filipstrahov/quest_dependencies/quest_data.gd" id="3_unkkl"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8ftkv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t8h38"]
+
+[sub_resource type="Resource" id="Resource_nf1gx"]
+script = ExtResource("3_unkkl")
+quest_unique_name = "unique"
+quest_name = "QUESTOS"
+quest_description = "Quest1 updated - go to see dorm manager."
+quest_completed = false
+metadata/_custom_type_script = "uid://dw8ujgujfm4u1"
+
+[node name="Quest2" type="Area3D"]
+script = ExtResource("1_4y7ac")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_8ftkv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_t8h38")
+
+[node name="Quest" type="Node" parent="."]
+script = ExtResource("2_4y7ac")
+quest_data = SubResource("Resource_nf1gx")
+metadata/_custom_type_script = "uid://i5c3iacsacm5"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

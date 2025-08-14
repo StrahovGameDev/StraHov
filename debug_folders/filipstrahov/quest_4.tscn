@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://d16jsdlm2a36f"]
+
+[ext_resource type="Script" uid="uid://ds65vx7njhmku" path="res://debug_folders/filipstrahov/quest_4.gd" id="1_edfwl"]
+[ext_resource type="Script" uid="uid://i5c3iacsacm5" path="res://debug_folders/filipstrahov/quest_dependencies/quest.gd" id="2_t65su"]
+[ext_resource type="Script" uid="uid://dw8ujgujfm4u1" path="res://debug_folders/filipstrahov/quest_dependencies/quest_data.gd" id="3_e2goi"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ujdl3"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2j71t"]
+
+[sub_resource type="Resource" id="Resource_epo46"]
+script = ExtResource("3_e2goi")
+quest_id = 0
+quest_name = "Quest X"
+quest_description = "If you are reading this, you have completed QUEST 1"
+quest_completed = false
+metadata/_custom_type_script = "uid://dw8ujgujfm4u1"
+
+[node name="Quest4" type="Area3D"]
+script = ExtResource("1_edfwl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_ujdl3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_2j71t")
+
+[node name="Quest" type="Node" parent="."]
+script = ExtResource("2_t65su")
+quest_data = SubResource("Resource_epo46")
+metadata/_custom_type_script = "uid://i5c3iacsacm5"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
