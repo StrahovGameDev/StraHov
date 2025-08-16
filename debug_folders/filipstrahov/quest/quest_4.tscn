@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://d16jsdlm2a36f"]
 
-[ext_resource type="Script" uid="uid://ds65vx7njhmku" path="res://debug_folders/filipstrahov/quest_4.gd" id="1_edfwl"]
-[ext_resource type="Script" uid="uid://i5c3iacsacm5" path="res://debug_folders/filipstrahov/quest_dependencies/quest.gd" id="2_t65su"]
-[ext_resource type="Script" uid="uid://dw8ujgujfm4u1" path="res://debug_folders/filipstrahov/quest_dependencies/quest_data.gd" id="3_e2goi"]
+[ext_resource type="Script" uid="uid://ds65vx7njhmku" path="res://debug_folders/filipstrahov/quest/quest_4.gd" id="1_edfwl"]
+[ext_resource type="Script" uid="uid://i5c3iacsacm5" path="res://debug_folders/filipstrahov/quest/quest_dependencies/quest.gd" id="2_t65su"]
+[ext_resource type="Script" uid="uid://dw8ujgujfm4u1" path="res://debug_folders/filipstrahov/quest/quest_dependencies/quest_data.gd" id="3_e2goi"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ujdl3"]
 

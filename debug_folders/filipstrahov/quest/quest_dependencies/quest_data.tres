@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="QuestData" load_steps=2 format=3 uid="uid://cmv66krf6e5lj"]
 
-[ext_resource type="Script" uid="uid://dw8ujgujfm4u1" path="res://debug_folders/filipstrahov/quest_dependencies/quest_data.gd" id="1_qah21"]
+[ext_resource type="Script" uid="uid://dw8ujgujfm4u1" path="res://debug_folders/filipstrahov/quest/quest_dependencies/quest_data.gd" id="1_qah21"]
 
 [resource]
 script = ExtResource("1_qah21")

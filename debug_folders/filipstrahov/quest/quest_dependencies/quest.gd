@@ -4,11 +4,9 @@ class_name Quest
 @export var quest_data: QuestData
 
 
-func add_quest():
-	#var new_quest: Resource = quest_data.duplicate(true)
-	QuestManager.quest_array.append(quest_data)
-	QuestManager.add_quest()
-	#queue_free()
+func add_quest(unique_quest_name: String) -> void:
+	QuestManager.quest_dictionary[quest_data.quest_unique_name] = quest_data
+	QuestManager.add_quest(unique_quest_name)
 	
 
 

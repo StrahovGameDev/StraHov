@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0oikjky6vpu6"]
 
-[ext_resource type="Script" uid="uid://bccqw1vdheu4o" path="res://debug_folders/filipstrahov/quest_labels.gd" id="1_grn6d"]
+[ext_resource type="Script" uid="uid://bccqw1vdheu4o" path="res://debug_folders/filipstrahov/quest/quest_labels.gd" id="1_grn6d"]
 
 [node name="QuestUI" type="CanvasLayer"]
 layer = 2
@@ -18,11 +18,41 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 320.0
+offset_left = 256.0
 offset_top = 64.0
 offset_right = 576.0
 offset_bottom = -155.0
 grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="QuestLabels"]
+visible = false
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 256.0
+offset_top = 64.0
+offset_right = 576.0
+offset_bottom = -155.0
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestLabels/ColorRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138.0
+offset_right = 138.0
+offset_bottom = 31.0
+grow_horizontal = 2
+
+[node name="Button" type="Button" parent="QuestLabels/ColorRect2/HBoxContainer"]
+layout_mode = 2
+text = "Current quests"
+
+[node name="Button2" type="Button" parent="QuestLabels/ColorRect2/HBoxContainer"]
+layout_mode = 2
+text = "Completed quests"
 
 [node name="ColorRect" type="ColorRect" parent="QuestLabels"]
 layout_mode = 1

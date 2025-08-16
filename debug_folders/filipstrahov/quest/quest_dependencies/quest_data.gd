@@ -7,3 +7,4 @@ class_name QuestData
 @export var quest_name: String
 @export_multiline var quest_description: String
 @export var quest_completed: bool
+@export var quest_requirements: String

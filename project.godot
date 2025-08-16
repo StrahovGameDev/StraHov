@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-QuestManager="*res://debug_folders/filipstrahov/quest_manager.gd"
+QuestManager="*res://debug_folders/filipstrahov/quest/quest_manager.gd"
 
 [file_customization]
 

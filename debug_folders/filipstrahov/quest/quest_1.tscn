@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cmx1dgl3bnik7"]
 
-[ext_resource type="Script" uid="uid://c7hahayecwhpi" path="res://debug_folders/filipstrahov/quest_1.gd" id="1_43o42"]
-[ext_resource type="Script" uid="uid://i5c3iacsacm5" path="res://debug_folders/filipstrahov/quest_dependencies/quest.gd" id="2_xnek6"]
-[ext_resource type="Script" uid="uid://dw8ujgujfm4u1" path="res://debug_folders/filipstrahov/quest_dependencies/quest_data.gd" id="3_pidd7"]
+[ext_resource type="Script" uid="uid://c7hahayecwhpi" path="res://debug_folders/filipstrahov/quest/quest_1.gd" id="1_43o42"]
+[ext_resource type="Script" uid="uid://i5c3iacsacm5" path="res://debug_folders/filipstrahov/quest/quest_dependencies/quest.gd" id="2_xnek6"]
+[ext_resource type="Script" uid="uid://dw8ujgujfm4u1" path="res://debug_folders/filipstrahov/quest/quest_dependencies/quest_data.gd" id="3_pidd7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_55t1n"]
 
@@ -10,10 +10,11 @@
 
 [sub_resource type="Resource" id="Resource_cqpko"]
 script = ExtResource("3_pidd7")
-quest_unique_name = ""
-quest_name = "Quest1"
-quest_description = "Your task is to go to the big ball."
+quest_unique_name = "quest1"
+quest_name = "See a block manager"
+quest_description = "Your task is to go to the big ball aka block manager."
 quest_completed = false
+quest_requirements = ""
 metadata/_custom_type_script = "uid://dw8ujgujfm4u1"
 
 [node name="Quest1" type="Area3D"]

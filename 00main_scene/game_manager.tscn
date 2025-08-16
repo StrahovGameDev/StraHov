@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bh1bx58xo7kmm"]
+[gd_scene load_steps=16 format=3 uid="uid://bh1bx58xo7kmm"]
 
 [ext_resource type="Script" uid="uid://bbookv36piwvg" path="res://00main_scene/game_manager.gd" id="1_ctrpd"]
 [ext_resource type="PackedScene" uid="uid://djesgf26jvqba" path="res://scenes/player/player.tscn" id="2_ddapi"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bmcdpwrrpli6k" path="res://scenes/player/phone.tscn" id="8_0buo7"]
 [ext_resource type="PackedScene" uid="uid://c8kybpvtqyg1" path="res://cutscenes/cutscene_manager.tscn" id="8_yvaem"]
 [ext_resource type="PackedScene" uid="uid://bm06vvgv40ypg" path="res://shelf.tscn" id="9_ot8w6"]
+[ext_resource type="PackedScene" uid="uid://cmx1dgl3bnik7" path="res://debug_folders/filipstrahov/quest/quest_1.tscn" id="13_cvbbf"]
+[ext_resource type="PackedScene" uid="uid://b58irk40sfqvc" path="res://debug_folders/filipstrahov/quest/quest_2.tscn" id="14_ao7jc"]
+[ext_resource type="PackedScene" uid="uid://ccxbaf1kkx0bw" path="res://debug_folders/filipstrahov/quest/quest_3.tscn" id="15_vw7hv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ot8w6"]
 size = Vector3(5.87, 1, 2.35)
@@ -108,6 +111,15 @@ transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 2, -9.42897)
 mesh = SubResource("BoxMesh_cvbbf")
+
+[node name="Quest1" parent="." instance=ExtResource("13_cvbbf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 3, 0)
+
+[node name="Quest2" parent="." instance=ExtResource("14_ao7jc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.0569, 2.52448, 0)
+
+[node name="Quest3" parent="." instance=ExtResource("15_vw7hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.4168, 1.57975, 0)
 
 [connection signal="finished" from="CutsceneManager" to="pause_menu" method="_on_cutscene_manager_finished"]
 [connection signal="started" from="CutsceneManager" to="pause_menu" method="_on_cutscene_manager_started"]
