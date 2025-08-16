@@ -14,7 +14,9 @@ quest_unique_name = "quest1"
 quest_name = "See a block manager"
 quest_description = "Your task is to go to the big ball aka block manager."
 quest_completed = false
-quest_requirements = ""
+quest_requirements = {
+"req": false
+}
 metadata/_custom_type_script = "uid://dw8ujgujfm4u1"
 
 [node name="Quest1" type="Area3D"]

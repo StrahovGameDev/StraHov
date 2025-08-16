@@ -21,15 +21,21 @@ func update_description(quest_unique_name: String, new_description: String) -> v
 	description_updated.emit(quest.quest_description)
 
 
-func update_requirements(quest_unique_name: String, new_quest_requirement: String) -> void:
+func update_requirements(quest_unique_name: String, key: String, value: bool) -> void:
 	var quest: Resource = _find_quest(quest_unique_name)
-	quest.quest_requirements = new_quest_requirement
+	quest.quest_requirements[key] = value
+
+
+func check_requirements(quest_unique_name: String, key: String) -> bool:
+	var quest: Resource = _find_quest(quest_unique_name)
+	return quest.quest_requirements[key]
+
 
 
 func complete_quest(quest_unique_name: String) -> void:
 	var quest: Resource = _find_quest(quest_unique_name)
 	quest.quest_completed = true
-	quest_completed.emit()
+	quest_completed.emit(quest)
 
 
 func _find_quest(quest_unique_name: String) -> Resource:
