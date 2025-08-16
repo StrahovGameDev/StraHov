@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 QuestManager="*res://quest_manager.gd"
+ConfigFileHandler="*res://config/ConfigFileHandler.gd"
 
 [file_customization]
 
